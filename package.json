@@ -1,0 +1,15 @@
+{
+  "name": "nodetest",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "delete-build": "cd server && rmdir /s /q build",
+    "client-build": "cd client && npm ci && npm run build && cd ../",
+    "server-build": "cd server && npm ci && cd ../",
+    "autobuild": "npm run delete-build && npm run client-build && npm run server-build && move ./client/build ./server/",
+    "start" : "cd server && node app.js"
+  },
+  "author": "",
+  "license": "ISC"
+}
